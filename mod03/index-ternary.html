@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ternary Demo</title>
+    <script>
+      // check dayNum and set weekend as follows:
+      // if dayNum < 6: "Weekday"
+      // else : "Weekend"
+      function checkDow() {
+        let dayNum = document.getElementById("dayNum").value;
+        let weekendStr = dayNum < 6 ? "Weekday" : "Weekend";
+        // if (dayNum < 6) {
+        //   weekendStr = "Weekday";
+        // } else {
+        //   weekendStr = "Weekend";
+        // }
+        let weekendP = document.getElementById("weekend");
+        weekendP.textContent = weekendStr;
+      }
+    </script>
+  </head>
+  <body>
+    Day of Week: <input type="number" id="dayNum" />
+    <button onclick="checkDow()">Check It!!</button>
+    <p id="weekend">Weekday or Weekend?</p>
+  </body>
+</html>
