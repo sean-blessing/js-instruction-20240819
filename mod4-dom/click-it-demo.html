@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click It Demo</title>
+    <script>
+      function leftClick() {
+        alert("Left Clicked P1!");
+      }
+      function rightClick(event) {
+        event.preventDefault(); // Prevent the default right-click menu
+        alert("Right Clicked P3!");
+      }
+
+      function middleClick(event) {
+        if (event.button === 1) {
+          alert("Middle Clicked P2!");
+        }
+      }
+
+      // Add event listener for right-click on the element with id "p3"
+      window.onload = function () {
+        var p3 = document.getElementById("p3");
+        p3.addEventListener("contextmenu", rightClick);
+
+        var p2 = document.getElementById("p2");
+        p2.addEventListener("mousedown", middleClick);
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Click Some Stuff!</h1>
+    <p id="p1" onclick="leftClick()">Paragraph One - Left Click</p>
+    <p id="p2">Paragraph Two - Mid Click</p>
+    <p id="p3">Paragraph Three - Right Click</p>
+  </body>
+</html>
